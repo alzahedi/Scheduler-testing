@@ -17,5 +17,3 @@ python_env/
 *_*_test_*
 *.out
 /test-results/*
-
-/*.whl
