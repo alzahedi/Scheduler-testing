@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.env/
+env/
+env27/
+venv/
+python_env/
+.python-version
+
+# Scheduler created log files 
+.*_log
+
+# Local test folders created
+*_*_test_*
+*.out
+/test-results/*
+
+/*.whl

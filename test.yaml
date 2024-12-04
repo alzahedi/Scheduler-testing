@@ -1,0 +1,27 @@
+# ==========================================================================
+# YAML FILE WITH SEQUENTIAL ORDERING TO BE USED BY TESTS
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# This is a demo YAML file having sequential ordering and is used by tests to
+# verify and test out the scheduler code logic.
+# ==========================================================================
+
+mode: waitall
+
+groups:
+  - Group: Group 1
+    Strategy: sequential
+  # - Group: Group 2
+  #   Strategy: sequential
+    # Mode: runalways
+
+tasks:
+  - Command: pwsh run-tests.ps1 -TEST_FOLDER_PATH tests/test-one
+    Name: Test one
+    Group: Group 1
+    TimeoutInMinutes: 0.2
+
+  - Command: pwsh run-tests.ps1 -TEST_FOLDER_PATH tests/test-two
+    Name: Test two
+    Group: Group 1
+    TimeoutInMinutes: 5
+
