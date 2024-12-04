@@ -10,9 +10,9 @@ mode: waitall
 groups:
   - Group: Group 1
     Strategy: sequential
-  # - Group: Group 2
-  #   Strategy: sequential
-    # Mode: runalways
+  - Group: Group 2
+    Strategy: sequential
+    Mode: runalways
 
 tasks:
   - Command: pwsh run-tests.ps1 -TEST_FOLDER_PATH tests/test-one
@@ -20,8 +20,8 @@ tasks:
     Group: Group 1
     TimeoutInMinutes: 0.2
 
-  - Command: pwsh run-tests.ps1 -TEST_FOLDER_PATH tests/test-two
-    Name: Test two
-    Group: Group 1
+  - Command: pwsh run-tests.ps1 -TEST_FOLDER_PATH tests/test-three
+    Name: Test three
+    Group: Group 2
     TimeoutInMinutes: 5
 
